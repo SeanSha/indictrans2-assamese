@@ -12,41 +12,6 @@
 - **方法**: LoRA 微调
 - **数据分割**: 50,000 训练 + 2,000 验证 + 2,000 测试 + 500 迷你训练集
 
-## 📁 项目结构
-
-```
-project/
-├── docs/                           # 项目文档
-│   ├── PROJECT_SUMMARY.md          # 项目总结
-│   ├── TECHNICAL_ISSUES_AND_SOLUTIONS.md  # 技术问题解决方案
-│   ├── QUICK_START_GUIDE.md        # 快速开始指南
-│   ├── PROJECT_STATUS_REPORT.md    # 项目状态报告
-│   ├── SCHOOL_SERVER_MIGRATION_PLAN.md  # 服务器迁移计划
-│   └── VM_SETUP_GUIDE.md           # 虚拟机搭建指南
-├── organized_scripts/              # 核心脚本
-│   ├── preprocess_indictrans2_fixed.py  # 数据预处理
-│   ├── finetune_lora_cuda_fixed.py     # LoRA 微调
-│   ├── prepare_data_for_official_lora.py # 官方格式数据准备
-│   ├── evaluate_lora_model.py      # 模型评估
-│   └── setup_hf_auth.py            # Hugging Face 认证
-├── scripts/                        # SLURM 作业脚本
-│   ├── preprocess.sbatch           # 数据预处理作业
-│   ├── finetune.sbatch             # 模型微调作业
-│   ├── evaluate.sbatch             # 模型评估作业
-│   ├── submit_jobs.sh              # 作业提交脚本
-│   └── monitor_jobs.sh             # 作业监控脚本
-├── data/                          # 数据文件
-│   ├── as-eng_split/              # 分割后的CSV数据
-│   └── assamese_english_official_format/  # 官方格式数据
-├── outputs/                       # 训练输出
-├── downloads/                     # 原始数据集
-├── IndicTrans2/                   # 官方项目（未修改）
-├── setup_server_env.sh            # 服务器环境配置
-├── setup_vm_env.sh                # 虚拟机环境配置
-├── prepare_git_repo.sh            # Git 仓库准备
-└── README.md                      # 项目说明
-```
-
 ## 🌿 分支策略
 
 本项目采用多分支策略，针对不同环境优化：
@@ -73,49 +38,67 @@ project/
 - **PEFT**: LoRA 微调
 - **GPU**: 推荐 8GB+ VRAM
 
+### 配置设置
+
+在使用项目之前，请阅读 `CONFIG_SETUP.md` 文件来设置 Hugging Face 认证。
+
 ### 本地开发 (Windows + 虚拟机)
 
-1. **设置虚拟机环境**
+1. **克隆项目**
+   ```bash
+   git clone https://github.com/SeanSha/indictrans2-assamese
+   cd indictrans2-assamese
+   git checkout windows-vm
+   ```
+
+2. **设置虚拟机环境**
    ```bash
    chmod +x setup_vm_env.sh
    ./setup_vm_env.sh
    ```
 
-2. **激活环境**
+3. **激活环境**
    ```bash
    source ~/projects/indictrans2-assamese/indictrans2_env/bin/activate
    ```
 
-3. **设置认证**
+4. **设置认证**
    ```bash
-   python organized_scripts/setup_hf_auth.py
+   export HF_TOKEN="your_token_here"
    ```
 
-4. **运行数据预处理**
+5. **运行数据预处理**
    ```bash
    python organized_scripts/preprocess_indictrans2_fixed.py
    ```
 
-5. **运行模型微调**
+6. **运行模型微调**
    ```bash
    python organized_scripts/finetune_lora_cuda_fixed.py
    ```
 
 ### 服务器部署
 
-1. **设置服务器环境**
+1. **克隆项目**
+   ```bash
+   git clone https://github.com/SeanSha/indictrans2-assamese
+   cd indictrans2-assamese
+   git checkout school-server
+   ```
+
+2. **设置服务器环境**
    ```bash
    chmod +x setup_server_env.sh
    ./setup_server_env.sh
    ```
 
-2. **提交作业**
+3. **提交作业**
    ```bash
    chmod +x scripts/submit_jobs.sh
    ./scripts/submit_jobs.sh
    ```
 
-3. **监控作业**
+4. **监控作业**
    ```bash
    chmod +x scripts/monitor_jobs.sh
    ./scripts/monitor_jobs.sh
@@ -159,16 +142,6 @@ project/
 - **模型保存**: ✅ 保存了多个检查点
 - **LoRA 适配器**: ✅ 成功生成适配器文件
 
-### 输出文件
-```
-outputs/assamese_english_lora_cuda_fixed_20251021_005208/
-├── adapter_config.json          # LoRA 配置
-├── adapter_model.safetensors    # LoRA 权重
-├── checkpoint-*/                # 训练检查点
-├── trainer_state.json          # 训练状态
-└── simple_evaluation_results.json # 评估结果
-```
-
 ## 🚨 已知问题
 
 ### 1. 模型生成错误 (Critical)
@@ -182,35 +155,13 @@ outputs/assamese_english_lora_cuda_fixed_20251021_005208/
 - **影响**: 无法安装 fairseq 和 IndicTransToolkit
 - **解决方案**: 使用 Linux 环境或安装 Visual Studio Build Tools
 
-## 🛠️ 故障排除
-
-### 常见问题
-
-1. **CUDA 内存不足**
-   ```bash
-   # 减少批次大小
-   per_device_train_batch_size=2
-   gradient_accumulation_steps=8
-   ```
-
-2. **认证失败**
-   ```bash
-   # 重新认证
-   python organized_scripts/setup_hf_auth.py
-   ```
-
-3. **数据格式错误**
-   ```bash
-   # 检查数据格式
-   head -5 assamese_english_official_format/train/eng_Latn-asm_Beng/train.eng_Latn
-   ```
-
 ## 📞 获取帮助
 
 1. 查看 `docs/PROJECT_SUMMARY.md` 了解项目详情
 2. 查看 `docs/TECHNICAL_ISSUES_AND_SOLUTIONS.md` 了解技术问题
 3. 查看 `docs/QUICK_START_GUIDE.md` 快速开始
 4. 查看 `docs/SCHOOL_SERVER_MIGRATION_PLAN.md` 服务器部署
+5. 查看 `CONFIG_SETUP.md` 配置设置
 
 ## 🔗 相关资源
 
