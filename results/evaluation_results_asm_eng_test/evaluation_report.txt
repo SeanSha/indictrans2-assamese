@@ -1,0 +1,58 @@
+=== 微调后的阿萨姆语→英语模型评估报告 ===
+基础模型: ai4bharat/indictrans2-indic-en-dist-200M
+LoRA模型: training/outputs/assamese_english_lora_asm_eng_20251021_145310
+测试数据: data_processing/assamese_english_asm_eng_mini_format/test
+输出目录: results/evaluation_results_asm_eng_test
+
+BLEU分数: 5.5482
+BLEU详细信息:
+BLEU = 5.55 28.8/7.0/2.6/1.8 (BP = 1.000 ratio = 1.010 hyp_len = 528 ref_len = 523)
+
+其他评估指标:
+- average_prediction_length: 15.6333
+- average_reference_length: 17.4000
+- average_length_ratio: 0.9431
+- length_ratio_std_dev: 0.2985
+- exact_match_rate: 0.0000
+
+翻译样本 (前10个):
+  阿萨姆语: যি সৰু সি হাজাৰ হৈ উঠিব ; সৰু জাতি বৃহৎ হ’ব ; মই যিহোৱাই উচিত সময়ত ইয়াক সাম্ফল কৰিবলৈ বেগী হম ।
+  参考英语: A little one shall become a thousand , and a small one a strong nation I the Lord will hasten it in his time .
+  预测英语: The child shall be a wretch, and the little nation shall be a wretch : I am the Lord that will make him whole in the midst of the congregation.
+
+  阿萨姆语: কিয়নো প্ৰভুৰ চকুৱে ধাৰ্মিক সকলক দৃষ্টি কৰে , আৰু তেওঁৰ কাণে তেখেত সকলৰ প্ৰাৰ্থনা শুনে । কিন্তু যি সকল কু কৰ্মী , তেখেত সকললৈ প্ৰভুৰ মুখ বিৰোধী ।
+  参考英语: For he that will love life , and see good days , let him refrain his tongue from evil , and his lips that they speak no guile
+  预测英语: For the Lord hath made the righteous to see, and hath called them therein : but the Lord that worketh therein is the foolish one.
+
+  阿萨姆语: উদাহৰণস্বৰূপে , এখন মণ্ডলীৰ ১০৫ জন প্ৰচাৰকে ৰাতিপূৱা কৰা প্ৰচাৰ কাৰ্য্যত লগ পোৱা সকলো গৃহস্থকে বাইবেল অধ্যয়ন কৰিবলৈ প্ৰস্তাৱনা আগবঢ়ালে ।
+  参考英语: One morning a congregation with 105 publishers made a special effort to offer a Bible study to each householder they met .
+  预测英语: After the war, the British had to face a war of words.
+
+  阿萨姆语: আৰু চলোমনে যিবোৰ পাত্ৰ সাজিলে , সেই আটাইবোৰ অনেক আছিল ; কিয়নো সেইবোৰ পিতলৰ ওজন কিমান , তাক জনা নগ’ল ।
+  参考英语: Thus Solomon made all these vessels in great abundance for the weight of the brass could not be found out .
+  预测英语: And Solomon made the son of Jacob, and came to him, and knew him not, because Caiman was the son of Jacob.
+
+  阿萨姆语: কৰঙনৰ জোৰাৰ চুক  ।
+  参考英语: the part of the body where the legs join at the top including the area around the Genitals
+  预测英语: The curtain of the curtain.
+
+  阿萨姆语: ফাংকশ্বনবোৰৰ সৈতে প্রৱিষ্টিবোৰ এতিয়ালৈকে আছে যিবোৰ কেৱল মাত্ৰ পপ আপছবোৰৰ লগত নির্ধাৰিত কৰিব পৰা যাব তথাপিও অব্যাহত ৰাখিবনে ?
+  参考英语: There are still entries with functions that can only be assigned to pop ups . Continue anyway ?
+  预测英语: And what is the matter with the poor, that they should not be put to the sword?
+
+  阿萨姆语: তেতিয়া পিতৰে তেওঁক একাষলৈ নি অনুযোগ কৰি ক লে হে প্ৰভু , ই আপোনাৰ পৰা দূৰ হওঁক আপোনাৰ প্ৰতি কেতিয়াও এনে নঘটক ।
+  参考英语: Then Peter took him , and began to rebuke him , saying , Be it far from thee , Lord this shall not be unto thee .
+  预测英语: And Peter saith unto him, Behold, thou art far from thee, and draw not thy prayer.
+
+  阿萨姆语: যিহোৰামৰ ৰাজত্বৰ সময়ত ইদোমীয়াসকলে যিহূদাৰ অধীনতা অস্বীকাৰ কৰি বিদ্রোহ কৰিলে আৰু তেওঁলোকৰ নিজৰ কাৰণে এজন ৰজা পাতি ল’লে ।
+  参考英语: In his days Edom revolted from under the hand of Judah , and made a king over themselves .
+  预测英语: The Edomites, who had been defeated by the king of Jehoram, were a king who had been defeated.
+
+  阿萨姆语: উৎসৱ পাৰ্বন বা আনন্দৰ মুহূৰ্তত ফুটুৱা সৰু বোমা ।
+  参考英语: A small bomb that are cracked during celebrations .
+  预测英语: A small bomb with a large statue of Lord Vishnu and Anand.
+
+  阿萨姆语: মানৱে ধাৰণা কৰাৰ অনুসাৰে তেওঁ আমাৰ পৰা বহু আঁতৰত আছেনে ?
+  参考英语: Is he too far removed to be interested in the expressions made to him by mere humans ?
+  预测英语: Is he coming out of us, that he should be afraid of us?
+

@@ -1,0 +1,9 @@
+{
+    "bleu_score": 5.548171908720096,
+    "bleu_details": "BLEU = 5.55 28.8/7.0/2.6/1.8 (BP = 1.000 ratio = 1.010 hyp_len = 528 ref_len = 523)",
+    "average_prediction_length": 15.633333333333333,
+    "average_reference_length": 17.4,
+    "average_length_ratio": 0.9431125932097912,
+    "length_ratio_std_dev": 0.29851773088377237,
+    "exact_match_rate": 0.0
+}

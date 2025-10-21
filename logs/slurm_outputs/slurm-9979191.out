@@ -1,0 +1,36 @@
+=== 开始基础预训练模型BLEU分数测试 ===
+=== IndicTrans2 基础预训练模型BLEU分数测试 ===
+基础模型: ai4bharat/indictrans2-indic-en-dist-200M
+测试数据: data_processing/assamese_english_asm_eng_mini_format/test
+输出目录: results/base_model_evaluation
+翻译方向: asm_Beng → eng_Latn
+✓ Hugging Face登录成功
+加载测试数据从: data_processing/assamese_english_asm_eng_mini_format/test
+✓ 加载了 30 个测试样本
+
+加载基础模型: ai4bharat/indictrans2-indic-en-dist-200M
+✓ 模型已加载到GPU
+✓ 基础模型加载成功
+开始翻译 30 个阿萨姆语句子...
+✓ 翻译完成，生成了 30 个翻译结果
+
+计算BLEU分数...
+✓ BLEU分数: 0.3383
+✓ BLEU详细信息: BLEU = 0.34 9.7/0.4/0.1/0.0 (BP = 1.000 ratio = 1.359 hyp_len = 711 ref_len = 523)
+
+计算其他评估指标...
+✓ 平均预测长度: 18.07
+✓ 平均参考长度: 17.40
+✓ 平均长度比率: 1.1319
+✓ 长度比率标准差: 1.4070
+✓ 完全匹配率: 0.0000
+
+保存结果到: results/base_model_evaluation
+✓ 翻译结果保存到: results/base_model_evaluation/base_model_translation_results.csv
+✓ 评估指标保存到: results/base_model_evaluation/base_model_evaluation_metrics.json
+✓ 评估报告保存到: results/base_model_evaluation/base_model_evaluation_report.txt
+
+🎉 基础模型BLEU分数测试完成！
+BLEU分数: 0.3383
+结果保存在: results/base_model_evaluation
+基础模型BLEU测试完成

@@ -1,0 +1,86 @@
+=== 准备阿萨姆语→英语数据 ===
+=== 准备阿萨姆语→英语数据集 ===
+总数据量: 54000
+训练集: 50000 样本
+验证集: 2000 样本
+测试集: 2000 样本
+
+✓ 完整数据集已按照官方格式保存到: assamese_english_asm_eng_format
+✓ 迷你数据集已按照官方格式保存到: assamese_english_asm_eng_mini_format
+  - 训练: 500 样本
+  - 验证: 20 样本
+  - 测试: 30 样本
+=== 开始训练阿萨姆语→英语LoRA模型 ===
+=== 训练阿萨姆语→英语LoRA模型 ===
+数据目录: data_processing/assamese_english_asm_eng_mini_format
+输出目录: training/outputs/assamese_english_lora_asm_eng_20251021_152909
+基础模型: ai4bharat/indictrans2-indic-en-dist-200M
+源语言: asm_Beng
+目标语言: eng_Latn
+✓ Hugging Face登录成功
+
+加载基础模型: ai4bharat/indictrans2-indic-en-dist-200M
+✓ 基础模型加载成功
+加载数据集从: data_processing/assamese_english_asm_eng_mini_format
+训练样本数: 500
+验证样本数: 20
+
+预处理数据集...
+trainable params: 2,654,208 || all params: 214,434,816 || trainable%: 1.2378
+
+开始训练...
+{'loss': 8.6379, 'grad_norm': 4.143158912658691, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.08}
+{'loss': 7.6345, 'grad_norm': 1.4827942848205566, 'learning_rate': 9.5e-05, 'epoch': 0.16}
+{'loss': 7.3552, 'grad_norm': 1.216234564781189, 'learning_rate': 0.000145, 'epoch': 0.24}
+{'loss': 7.6135, 'grad_norm': 1.2695398330688477, 'learning_rate': 0.00019500000000000002, 'epoch': 0.32}
+{'loss': 6.6594, 'grad_norm': 1.1160659790039062, 'learning_rate': 0.000245, 'epoch': 0.4}
+{'loss': 6.9034, 'grad_norm': 1.0086109638214111, 'learning_rate': 0.000295, 'epoch': 0.48}
+{'loss': 6.7682, 'grad_norm': 1.4927341938018799, 'learning_rate': 0.000345, 'epoch': 0.56}
+{'loss': 6.6651, 'grad_norm': 1.3373777866363525, 'learning_rate': 0.000395, 'epoch': 0.64}
+{'loss': 6.4766, 'grad_norm': 1.469110369682312, 'learning_rate': 0.00044500000000000003, 'epoch': 0.72}
+{'loss': 6.3322, 'grad_norm': 1.9002925157546997, 'learning_rate': 0.000495, 'epoch': 0.8}
+{'loss': 6.3751, 'grad_norm': 1.4700535535812378, 'learning_rate': 0.00048875, 'epoch': 0.88}
+{'loss': 6.1538, 'grad_norm': 1.3386069536209106, 'learning_rate': 0.00047625, 'epoch': 0.96}
+{'loss': 6.6193, 'grad_norm': 0.9619759917259216, 'learning_rate': 0.00046375, 'epoch': 1.04}
+{'loss': 6.1878, 'grad_norm': 1.497127890586853, 'learning_rate': 0.00045125, 'epoch': 1.12}
+{'loss': 6.3651, 'grad_norm': 1.2993351221084595, 'learning_rate': 0.00043874999999999996, 'epoch': 1.2}
+{'loss': 6.4969, 'grad_norm': 1.3840882778167725, 'learning_rate': 0.00042625000000000003, 'epoch': 1.28}
+{'loss': 6.3335, 'grad_norm': 1.479577898979187, 'learning_rate': 0.00041375, 'epoch': 1.36}
+{'loss': 5.8739, 'grad_norm': 1.279716968536377, 'learning_rate': 0.00040125, 'epoch': 1.44}
+{'loss': 6.1397, 'grad_norm': 0.9679974317550659, 'learning_rate': 0.00038875, 'epoch': 1.52}
+{'loss': 6.1331, 'grad_norm': 1.5357623100280762, 'learning_rate': 0.00037624999999999996, 'epoch': 1.6}
+{'loss': 5.9558, 'grad_norm': 1.177667260169983, 'learning_rate': 0.00036375000000000003, 'epoch': 1.68}
+{'loss': 6.4785, 'grad_norm': 1.4967927932739258, 'learning_rate': 0.00035125, 'epoch': 1.76}
+{'loss': 6.0031, 'grad_norm': 2.1753604412078857, 'learning_rate': 0.00033875, 'epoch': 1.84}
+{'loss': 6.3772, 'grad_norm': 1.1796141862869263, 'learning_rate': 0.00032625, 'epoch': 1.92}
+{'loss': 5.9284, 'grad_norm': 1.7582136392593384, 'learning_rate': 0.00031374999999999996, 'epoch': 2.0}
+{'loss': 6.1412, 'grad_norm': 1.3051952123641968, 'learning_rate': 0.00030125000000000003, 'epoch': 2.08}
+{'loss': 5.9839, 'grad_norm': 2.0562996864318848, 'learning_rate': 0.00028875, 'epoch': 2.16}
+{'loss': 6.2874, 'grad_norm': 1.0480579137802124, 'learning_rate': 0.00027625, 'epoch': 2.24}
+{'loss': 6.3294, 'grad_norm': 1.6184265613555908, 'learning_rate': 0.00026375, 'epoch': 2.32}
+{'loss': 6.0065, 'grad_norm': 1.3259676694869995, 'learning_rate': 0.00025124999999999995, 'epoch': 2.4}
+{'loss': 5.7832, 'grad_norm': 1.4990123510360718, 'learning_rate': 0.00023875, 'epoch': 2.48}
+{'loss': 6.0126, 'grad_norm': 1.1807173490524292, 'learning_rate': 0.00022625000000000002, 'epoch': 2.56}
+{'loss': 6.1091, 'grad_norm': 1.5166088342666626, 'learning_rate': 0.00021375, 'epoch': 2.64}
+{'loss': 5.9839, 'grad_norm': 1.620749592781067, 'learning_rate': 0.00020125, 'epoch': 2.72}
+{'loss': 5.6093, 'grad_norm': 1.5535331964492798, 'learning_rate': 0.00018875, 'epoch': 2.8}
+{'loss': 6.1602, 'grad_norm': 1.2293697595596313, 'learning_rate': 0.00017625, 'epoch': 2.88}
+{'loss': 5.8543, 'grad_norm': 1.5343000888824463, 'learning_rate': 0.00016375000000000002, 'epoch': 2.96}
+{'loss': 6.2176, 'grad_norm': 1.251209020614624, 'learning_rate': 0.00015125, 'epoch': 3.04}
+{'loss': 5.6193, 'grad_norm': 1.1866010427474976, 'learning_rate': 0.00013875, 'epoch': 3.12}
+{'loss': 6.042, 'grad_norm': 1.7013534307479858, 'learning_rate': 0.00012625, 'epoch': 3.2}
+{'loss': 6.0115, 'grad_norm': 1.259155035018921, 'learning_rate': 0.00011375, 'epoch': 3.28}
+{'loss': 5.8053, 'grad_norm': 2.713514804840088, 'learning_rate': 0.00010125000000000001, 'epoch': 3.36}
+{'loss': 6.0122, 'grad_norm': 1.474751591682434, 'learning_rate': 8.875e-05, 'epoch': 3.44}
+{'loss': 5.9509, 'grad_norm': 1.56256902217865, 'learning_rate': 7.625e-05, 'epoch': 3.52}
+{'loss': 6.2871, 'grad_norm': 1.5073403120040894, 'learning_rate': 6.375e-05, 'epoch': 3.6}
+{'loss': 6.0275, 'grad_norm': 1.5095336437225342, 'learning_rate': 5.125e-05, 'epoch': 3.68}
+{'loss': 5.7163, 'grad_norm': 1.1194086074829102, 'learning_rate': 3.875e-05, 'epoch': 3.76}
+{'loss': 5.9307, 'grad_norm': 1.579768419265747, 'learning_rate': 2.625e-05, 'epoch': 3.84}
+{'loss': 5.9466, 'grad_norm': 1.3485450744628906, 'learning_rate': 1.375e-05, 'epoch': 3.92}
+{'loss': 5.7831, 'grad_norm': 1.5428142547607422, 'learning_rate': 1.25e-06, 'epoch': 4.0}
+{'train_runtime': 339.685, 'train_samples_per_second': 5.888, 'train_steps_per_second': 1.472, 'train_loss': 6.281569702148437, 'epoch': 4.0}
+
+保存模型到: training/outputs/assamese_english_lora_asm_eng_20251021_152909
+✓ 训练完成！
+阿萨姆语→英语LoRA训练完成

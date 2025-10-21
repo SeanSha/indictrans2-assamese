@@ -1,0 +1,18 @@
+翻译进度:   0%|          | 0/8 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  12%|█▎        | 1/8 [00:22<02:38, 22.66s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  25%|██▌       | 2/8 [00:27<01:12, 12.09s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  38%|███▊      | 3/8 [00:33<00:47,  9.52s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  50%|█████     | 4/8 [00:34<00:24,  6.07s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  62%|██████▎   | 5/8 [00:35<00:12,  4.21s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  75%|███████▌  | 6/8 [00:39<00:08,  4.01s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  88%|████████▊ | 7/8 [00:40<00:03,  3.24s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度: 100%|██████████| 8/8 [00:41<00:00,  2.37s/it]翻译进度: 100%|██████████| 8/8 [00:41<00:00,  5.16s/it]
+翻译进度:   0%|          | 0/8 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  12%|█▎        | 1/8 [00:02<00:16,  2.41s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  25%|██▌       | 2/8 [00:04<00:11,  1.93s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  38%|███▊      | 3/8 [00:05<00:08,  1.72s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  50%|█████     | 4/8 [00:08<00:08,  2.14s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  62%|██████▎   | 5/8 [00:09<00:05,  1.88s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  75%|███████▌  | 6/8 [00:11<00:03,  1.86s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度:  88%|████████▊ | 7/8 [00:13<00:01,  1.79s/it]The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+翻译进度: 100%|██████████| 8/8 [00:14<00:00,  1.62s/it]翻译进度: 100%|██████████| 8/8 [00:14<00:00,  1.80s/it]
