@@ -1,0 +1,44 @@
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 日志文件
+*.log
+logs/slurm_outputs/slurm-*.out
+logs/slurm_outputs/slurm-*.err
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 大文件（模型文件等）
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# 数据文件（如果太大）
+*.csv
+*.tsv
+*.json
+*.txt
+
+# 但保留重要的配置文件
+!env.example
+!README.md
+!run_pipeline.sh
