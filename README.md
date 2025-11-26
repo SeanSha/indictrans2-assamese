@@ -1,188 +1,197 @@
-IndicTrans2 Assamese–English Translation Fine-Tuning Project
+# IndicTrans2 Assamese–English Translation Fine-Tuning Project
 
-Project Overview
-This project fine-tunes the ai4bharat/indictrans2-indic-en-dist-200M model for Assamese to English machine translation.
-It uses the WMT 2025 Indic MT Task dataset and supports both LoRA fine-tuning and full-parameter training.
+## 📋 Project Overview
+This project fine-tunes the `ai4bharat/indictrans2-indic-en-dist-200M` model for Assamese → English machine translation.  
+It uses the **WMT 2025 Indic MT Task** dataset and supports both **LoRA (Low-Rank Adaptation)** and **full-parameter fine-tuning**.
 
-Objectives
+---
 
-Dataset: WMT 2025 Indic MT Task – English–Assamese Training Data 2025.csv
+## 🎯 Objectives
+- **Dataset:** WMT 2025 Indic MT Task – English–Assamese Training Data (2025.csv)  
+- **Base Model:** [`ai4bharat/indictrans2-indic-en-dist-200M`](https://huggingface.co/ai4bharat/indictrans2-indic-en-dist-200M)  
+- **Task:** Assamese (`asm_Beng`) → English (`eng_Latn`) translation  
+- **Methods:** LoRA fine-tuning + full fine-tuning  
+- **Data Splits:**
+  - 50,000 training  
+  - 2,000 validation  
+  - 2,000 test  
+  - 500 mini-training subset  
 
-Base Model: ai4bharat/indictrans2-indic-en-dist-200M
+---
 
-Task: Assamese (asm_Beng) → English (eng_Latn) translation
+## 🌿 Branching Strategy
+The project uses separate branches for different environments:
 
-Methods: LoRA fine-tuning and full fine-tuning
+### **`main`**
+- Complete project  
+- General documentation  
 
-Data Split:
-50,000 training
-2,000 validation
-2,000 test
-500 mini-training subset
+### **`windows-vm`**
+- Windows + VM-specific setup  
+- Scripts for Windows environment  
+- VM configuration guide  
+- Debugging scripts  
+- Solutions for Windows-only issues  
 
-Branching Strategy
+### **`school-server`**
+- SLURM job scripts  
+- Training + evaluation on university HPC servers  
+- GPU cluster configuration  
+- Job monitoring tools  
 
-main: main branch containing the full project
+---
 
-windows-vm: optimized for Windows + virtual machine environments
+## 🚀 Quick Start
 
-school-server: optimized for university HPC servers with SLURM
+### Environment Requirements
+- Python 3.10+  
+- PyTorch 2.5.1+ with CUDA  
+- Transformers 4.28.1  
+- PEFT (LoRA)  
+- GPU: 8GB+ VRAM recommended  
 
-Quick Start
+### Setup Hugging Face Authentication
+See **`CONFIG_SETUP.md`**.
 
-Environment Requirements
+---
 
-Python 3.10+
+## 🖥️ Local Development (Windows + Virtual Machine)
 
-PyTorch 2.5.1+ with CUDA
-
-Transformers 4.28.1
-
-PEFT (LoRA)
-
-GPU with 8GB+ VRAM recommended
-
-Setup Authentication
-Read CONFIG_SETUP.md to configure your Hugging Face token.
-
-Local Development (Windows + VM)
-
-Clone the project
+### 1. Clone the project
+bash
 git clone https://github.com/SeanSha/indictrans2-assamese
-
 cd indictrans2-assamese
 git checkout windows-vm
 
-Set up the VM environment
+
+### Step 2 — Setup VM environment
 chmod +x setup_vm_env.sh
 ./setup_vm_env.sh
 
-Activate the environment
+
+### Step 3 — Activate environment
 source ~/projects/indictrans2-assamese/indictrans2_env/bin/activate
 
-Add authentication
+
+### Step 4 — Configure authentication
 export HF_TOKEN="your_token_here"
 
-Run preprocessing
+
+### Step 5 — Run preprocessing
 python organized_scripts/preprocess_indictrans2_fixed.py
 
-Run LoRA and full fine-tuning
+### Step 6 — Fine-tune (LoRA + Full)
 python organized_scripts/finetune_lora_cuda_fixed.py
 python organized_scripts/finetune_full_cuda.py
 
-School Server Deployment
 
-Clone the project
+---
+
+## 3. School Server Deployment (SLURM)
+
+### Step 1 — Clone
 git clone https://github.com/SeanSha/indictrans2-assamese
-
 cd indictrans2-assamese
 git checkout school-server
 
-Setup server environment
+
+### Step 2 — Environment Setup
 chmod +x setup_server_env.sh
 ./setup_server_env.sh
 
-Submit training jobs
+
+### Step 3 — Submit Jobs
 chmod +x scripts/submit_jobs.sh
 ./scripts/submit_jobs.sh
 
-Monitor jobs
+
+### Step 4 — Monitor Jobs
 chmod +x scripts/monitor_jobs.sh
 ./scripts/monitor_jobs.sh
 
-Project Status
 
-Completed
+---
 
-Dataset preprocessing
+## 📊 Project Status
 
-LoRA fine-tuning
+### Completed
+- Dataset preprocessing  
+- LoRA fine-tuning  
+- CUDA training  
+- Docs ready  
+- Server deployment  
+- VM configuration  
 
-CUDA accelerated training
+### Partially Completed
+- Training successful  
+- Inference failing  
+- Evaluation blocked  
 
-Project documentation
+### Pending
+- Fix generation error  
+- Production deployment  
 
-Server deployment scripts
+---
 
-VM environment setup
+## 🔧 Tech Stack
+- Python 3.10  
+- PyTorch 2.5.1 + CUDA 12.1  
+- Transformers 4.28.1  
+- PEFT (LoRA)  
+- Hugging Face Hub  
+- SLURM (server)  
 
-Partially Completed
+---
 
-Training completed successfully
+## 📈 Training Results
+- 3 epochs completed  
+- Loss: 4.5 → 3.6  
+- Checkpoints saved  
+- LoRA adapters generated  
 
-Inference still has errors
+---
 
-Evaluation blocked due to inference issue
+## 🚨 Known Issues
 
-Pending
+### Issue 1 — Model Generation Error
 
-Fixing model generation error
 
-Preparing production deployment
+AttributeError: 'NoneType' object has no attribute 'shape'
 
-Tech Stack
 
-Python 3.10
+**Cause:** IndicTrans2 generation requires IndicTransToolkit / fairseq  
+**Fix:**  
+- Install IndicTransToolkit (Linux recommended)  
+- Or use Linux with full C++ build tools  
 
-PyTorch 2.5.1 + CUDA 12.1
+---
 
-Transformers 4.28.1
+### Issue 2 — Environment Dependencies
+- Missing C++ compiler prevents fairseq installation  
+- Windows environment not ideal  
+**Solutions:**  
+- Use Linux / WSL2  
+- Or install Visual Studio Build Tools  
 
-PEFT (LoRA)
+---
 
-Hugging Face Hub
+## 📚 Documentation
+See:  
+- `docs/PROJECT_SUMMARY.md`  
+- `docs/TECHNICAL_ISSUES_AND_SOLUTIONS.md`  
+- `docs/QUICK_START_GUIDE.md`  
+- `docs/SCHOOL_SERVER_MIGRATION_PLAN.md`  
+- `CONFIG_SETUP.md`  
 
-CUDA GPU acceleration
+---
 
-SLURM scheduling on servers
+## 🔗 Resources
+- IndicTrans2 Repo: https://github.com/AI4Bharat/IndicTrans2  
+- Hugging Face Model: https://huggingface.co/ai4bharat/indictrans2-indic-en-dist-200M  
+- WMT 2025 Indic MT Dataset  
+- LoRA Paper  
 
-Training Results
+---
 
-Training finished for 3 epochs
-
-Loss dropped from 4.5+ to 3.6
-
-Checkpoints saved successfully
-
-LoRA adapters generated
-
-Known Issues
-
-Model Generation Error
-Error: AttributeError: 'NoneType' object has no attribute 'shape'
-Cause: IndicTrans2 inference requires components from IndicTransToolkit or fairseq.
-Solution: Install IndicTransToolkit or use Linux with proper C++ compiler.
-
-Environment Dependency Issues
-Problem: Missing C++ build tools
-Impact: Cannot install IndicTransToolkit or fairseq on Windows
-Solution: Use Linux or install Visual Studio Build Tools
-
-Documentation
-See:
-
-docs/PROJECT_SUMMARY.md
-
-docs/TECHNICAL_ISSUES_AND_SOLUTIONS.md
-
-docs/QUICK_START_GUIDE.md
-
-docs/SCHOOL_SERVER_MIGRATION_PLAN.md
-
-CONFIG_SETUP.md
-
-Resources
-
-IndicTrans2 Repo: https://github.com/AI4Bharat/IndicTrans2
-
-Hugging Face Model: https://huggingface.co/ai4bharat/indictrans2-indic-en-dist-200M
-
-WMT 2025 Indic MT Task dataset
-
-LoRA paper
-
-License
-MIT License
-
-Project Status: Fine-tuning completed, inference pending
-Last Updated: 2025-10-21
+## 📝 License
+MIT License  
